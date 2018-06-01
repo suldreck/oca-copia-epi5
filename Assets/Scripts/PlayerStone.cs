@@ -15,7 +15,7 @@ public class PlayerStone : MonoBehaviour
 
     public Tile StartingTile;
     Tile currentTile;
-
+    public stoneStorage myStoneStorage;
     bool scoreMe = false;
 
     stateManager theStateManager;
@@ -87,6 +87,7 @@ public class PlayerStone : MonoBehaviour
             {
                 // We are probably being scored
                 // TODO: Move us to the scored pile
+                Debug.Log("Scoring tile!");
                 SetNewTargetPosition(this.transform.position + Vector3.right * 10f);
             }
             else
@@ -170,6 +171,7 @@ public class PlayerStone : MonoBehaviour
 
             moveQueue[i] = finalTile;
         }
+        this.transform.SetParent(null);//jajaj become batman 
         moveQueueIndex = 0;
         currentTile = finalTile;
         theStateManager.IsDoneClicking = true;

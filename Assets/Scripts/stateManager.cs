@@ -30,9 +30,11 @@ public class stateManager : MonoBehaviour
     }
     void Update()
     {
-        if(IsDoneRolling && IsDoneClicking && IsDoneAnimating)
-        Debug.Log("Turn is done!");
-        NewTurn();
+        if (IsDoneRolling && IsDoneClicking && IsDoneAnimating)
+        {
+            Debug.Log("Turn is done!");
+            NewTurn();
+        }
 
     }
 }
